@@ -12,7 +12,7 @@ function Signup() {
     e.preventDefault()
     axios.post('http://127.0.0.1:3000/register',{name, email, password})
     .then(result => {console.log(result)
-    navigate('/login')
+    navigate('/')
     })
     .catch(err=>console.log(err))
   }
