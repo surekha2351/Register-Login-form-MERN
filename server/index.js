@@ -15,7 +15,7 @@ app.post('/register',(req, res) =>{
     .then(employees =>res.json(employees))
     .catch(err => res.json(err))
 })
-app.post('/login',(req, res) =>{
+app.post('/',(req, res) =>{
     const {email, password} = req.body;
     EmployeeModel.findOne({email:email}, {password:password})
     .then(user =>{
