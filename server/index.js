@@ -8,6 +8,9 @@ app.use(express.json()) //transport data from frontend to backend like json
 app.use(cors())
 
 
+
+
+
 mongoose.connect("mongodb://127.0.0.1:27017/employee")
 
 app.post('/register',(req, res) =>{

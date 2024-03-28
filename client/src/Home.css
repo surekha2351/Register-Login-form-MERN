@@ -1,0 +1,45 @@
+/* Home.css */
+
+.homepage {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.portfolio-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #198754; /* Green color */
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 24px;
+}
+
+.nav-links {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.about-section, .skills-section, .experience-section, .projects-section, .contact-details {
+    margin-top: 40px;
+}
+
+.about-section h2, .skills-section h2, .experience-section h2, .projects-section h2, .contact-details h2 {
+    color: #0d6efd; /* Blue color */
+}
+
+.about-section p, .skills-section p, .experience-section p, .projects-section p, .contact-details p {
+    color: #000;
+}

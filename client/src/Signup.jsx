@@ -1,6 +1,7 @@
-import  {  useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import './Signup.css';
 
 function Signup() {
   
@@ -8,53 +9,60 @@ function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const handleSubmit = (e)=>{
-    e.preventDefault()
-    axios.post('http://127.0.0.1:3000/register',{name, email, password})
-    .then(result => {console.log(result)
-    navigate('/')
-    })
-    .catch(err=>console.log(err))
-  }
-  
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios.post('http://127.0.0.1:3000/register', { name, email, password })
+      .then(result => {
+        console.log(result);
+        navigate('/');
+      })
+      .catch(err => console.log(err));
+  }
 
   return (
-    <div className="login">
-      <center>
-      <h1>Signup</h1>
+    <div className="signup-container">
+      <div>
+        <center>
+          <h1>Signup</h1>
 
-      <form action="POST">
-        <input
-          type="name"
-          onChange={(e) => {
-            setName(e.target.value);
-          }}
-          placeholder="Name"
-        />
-        <input
-          type="email"
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-          placeholder="Email"
-        />
-        <input
-          type="password"
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-          placeholder="Password"
-        />
-        <input type="submit" onClick={handleSubmit} />
-      </form>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label>Name</label>
+              <input
+                type="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Name"
+              />
+            </div>
+            <div className="form-group">
+              <label>Email</label>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email"
+              />
+            </div>
+            <div className="form-group">
+              <label>Password</label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Password"
+              />
+            </div>
+            <button type="submit" className="signup-btn">Signup</button>
+          </form>
 
-      <br />
-      <p>OR</p>
-      <br />
-
-      <Link to="/">Login Page</Link>
-      </center>
+          <div className="login-link">
+            <p>OR</p>
+            <Link to="/">Login Page</Link>
+          </div>
+        </center>
+      </div>
     </div>
   );
 }
